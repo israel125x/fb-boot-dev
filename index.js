@@ -41,6 +41,9 @@ app.post('/webhook/', function (req, res) {
       let sender = event.sender.id
       if (event.message && event.message.text) {
         let text = event.message.text
+		if(text === 'hola'){
+			sendTextMessage(sender, "Hello world, I am a chat bot " )
+		}	
         if (text === 'Generic') {
             sendGenericMessage(sender)
             continue
